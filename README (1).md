@@ -1,25 +1,21 @@
-# 🔐 AI Educational Escape Room Game Master
+ AI Educational Escape Room Game Master
 
 Turn any curriculum PDF into an interactive escape-room game. A teacher uploads a book or lesson, and an AI Game Master generates curriculum-based puzzles, plays a dramatic character with the student, gives graded hints, and finally assesses how well the student understood the material.
 
-**Live demo:** _add your Streamlit link here_
-**Team:** _add team member names here_
-**University project:** Graduation Project
+**Live demo:** _[add your Streamlit link here](https://ai-educational-escape-room-2yecxhssqx7bitcuz9udbi.streamlit.app/)_
 
----
-
-## 💡 Idea
+////The Idea
 
 Traditional quizzes (multiple choice) test memorization. This project tests **understanding**: the student must reason about the curriculum to open the door, while an AI character guides them through a story.
 
-## ✨ Features
+//// Features
 
 | Feature | Description |
 |---|---|
-| 📚 **Curriculum upload (RAG)** | The teacher uploads a PDF. It is split into chunks, embedded, and stored in a vector database so every puzzle is grounded in the book, not in the model's general knowledge. |
-| 🧩 **Puzzle Generator Chain** | Retrieves the relevant chunks for a chosen topic and creates a story scene plus a reasoning puzzle (cause-and-effect, scenario, cipher). No multiple choice. |
-| 🎭 **Dynamic Game Master Chain** | Talks to the student as a dramatic character. Accepts answers phrased in the student's own words and never reveals the secret answer. |
-| 💡 **Graded hint system** | Three hint levels: 1 = vague pointer, 2 = narrower clue, 3 = strong clue (never the answer). |
+**Curriculum upload (RAG)** | The teacher uploads a PDF. It is split into chunks, embedded, and stored in a vector database so every puzzle is grounded in the book, not in the model's general knowledge. |
+ **Puzzle Generator Chain** | Retrieves the relevant chunks for a chosen topic and creates a story scene plus a reasoning puzzle (cause-and-effect, scenario, cipher). No multiple choice. |
+ **Dynamic Game Master Chain** | Talks to the student as a dramatic character. Accepts answers phrased in the student's own words and never reveals the secret answer. |
+ **Graded hint system** | Three hint levels: 1 = vague pointer, 2 = narrower clue, 3 = strong clue (never the answer). |
 | 📊 **Assessment Chain** | Reads the whole interaction (wrong attempts, hints used, misconceptions) and produces a report: score, strengths, gaps, feedback, and topics to review. |
 | 🔁 **Renewable puzzles** | A new puzzle can be generated for any topic and difficulty (1-5) from the same book. |
 | 🌍 **Bilingual** | Puzzles and feedback in English or Arabic; the Game Master replies in the language the student writes in. |
