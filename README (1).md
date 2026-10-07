@@ -16,12 +16,12 @@ Traditional quizzes (multiple choice) test memorization. This project tests **un
  **Puzzle Generator Chain** | Retrieves the relevant chunks for a chosen topic and creates a story scene plus a reasoning puzzle (cause-and-effect, scenario, cipher). No multiple choice. |
  **Dynamic Game Master Chain** | Talks to the student as a dramatic character. Accepts answers phrased in the student's own words and never reveals the secret answer. |
  **Graded hint system** | Three hint levels: 1 = vague pointer, 2 = narrower clue, 3 = strong clue (never the answer). |
-| 📊 **Assessment Chain** | Reads the whole interaction (wrong attempts, hints used, misconceptions) and produces a report: score, strengths, gaps, feedback, and topics to review. |
-| 🔁 **Renewable puzzles** | A new puzzle can be generated for any topic and difficulty (1-5) from the same book. |
-| 🌍 **Bilingual** | Puzzles and feedback in English or Arabic; the Game Master replies in the language the student writes in. |
-| 🧱 **Structured outputs** | Every chain returns validated JSON through an Output Parser, so the app can reliably read the AI's answers. |
+ **Assessment Chain** | Reads the whole interaction (wrong attempts, hints used, misconceptions) and produces a report: score, strengths, gaps, feedback, and topics to review. |
+**Renewable puzzles** | A new puzzle can be generated for any topic and difficulty (1-5) from the same book. |
+ **Bilingual** | Puzzles and feedback in English or Arabic; the Game Master replies in the language the student writes in. |
+**Structured outputs** | Every chain returns validated JSON through an Output Parser, so the app can reliably read the AI's answers. |
 
-## 🏗️ Architecture
+##  Architecture
 
 ```mermaid
 flowchart LR
@@ -52,7 +52,7 @@ prompt | LLM | PydanticOutputParser
 
 Streamlit `session_state` stores the current puzzle, the conversation history, the highest hint level used, and the solved flag, so the game continues correctly across interactions.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **LLM:** Google Gemini (`gemini-3.1-flash-lite`)
 - **Embeddings:** Gemini Embedding (`gemini-embedding-001`)
@@ -62,7 +62,7 @@ Streamlit `session_state` stores the current puzzle, the conversation history, t
 - **Validation:** Pydantic
 - **UI:** Streamlit
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -71,7 +71,7 @@ Streamlit `session_state` stores the current puzzle, the conversation history, t
 └── README.md
 ```
 
-## 🚀 Run Locally
+## Run Locally
 
 ```bash
 git clone https://github.com/anouran949-create/AI-Educational-Escape-Room.git
@@ -88,20 +88,20 @@ GOOGLE_API_KEY = "your-key-here"
 
 > Never commit your API key to GitHub.
 
-## 🎮 How to Play
+##  How to Play
 
 1. **Teacher:** upload a curriculum PDF and click **Index curriculum**.
 2. Choose a **topic**, **language**, and **difficulty**, then click **New puzzle**.
 3. **Student:** read the scene, answer in your own words, or type "give me a hint".
 4. When the door opens (or you give up), click **Finish and assess** to get the report.
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 - The free Gemini tier has rate limits, so indexing a large book takes a few minutes (the app indexes in batches and waits between them).
 - The index lives in the session memory; refreshing the page requires indexing again.
 - Puzzle quality depends on the quality of the PDF text extraction.
 
-## 🔭 Future Work
+## Future Work
 
 - Separate teacher and student screens
 - Save indexed curricula and student reports in a database
